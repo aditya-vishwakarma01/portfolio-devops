@@ -169,6 +169,74 @@ docker run -d -p 80:80 --name portfolio portfolio
 
 ---
 
+### 🛠️ STEP: Add Secrets in GitHub Repository
+
+1. Go to your **GitHub Repository**
+2. Navigate to:
+
+   ```
+   Settings → Secrets and variables → Actions
+   ```
+3. Click **New repository secret**
+4. Add the following secrets:
+
+---
+
+### 🔑 Required Secrets
+
+#### 1️⃣ EC2_HOST
+
+* **Name**: `EC2_HOST`
+* **Value**: Public IP address of your EC2 instance
+
+  ```
+  Example: 13.233.xxx.xxx
+  ```
+
+---
+
+#### 2️⃣ EC2_KEY
+
+* **Name**: `EC2_KEY`
+* **Value**: Contents of your EC2 private key file (`.pem`)
+
+📌 How to get key content:
+
+```bash
+cat your-key.pem
+```
+
+⚠️ Copy the **entire content**, including:
+
+```
+-----BEGIN RSA PRIVATE KEY-----
+-----END RSA PRIVATE KEY-----
+```
+
+---
+
+### 🔒 Why Secrets Are Required
+
+* Prevents hardcoding sensitive credentials
+* Ensures secure SSH access from GitHub Actions
+* Follows industry-standard security practices
+
+---
+
+### ✅ After Adding Secrets
+
+Once secrets are added:
+
+* Push any code change to `main`
+* GitHub Actions will automatically:
+
+  * Connect to EC2 securely
+  * Pull latest code
+  * Build Docker image
+  * Deploy updated container
+
+---
+
 ## 🔁 Automated Deployment Flow
 
 * Any `git push` to `main` branch triggers CI/CD
