@@ -1,4 +1,3 @@
-
 # 🚀 Static Portfolio Deployment using Docker & AWS EC2
 
 ## 📌 Project Overview
@@ -57,16 +56,76 @@ PORTFOLIO/
 
 ## ⚙️ Step-by-Step Implementation
 
-### 1️⃣ Create Static Portfolio Website
+---
 
-* Developed a responsive static portfolio using HTML, CSS, and JavaScript.
-* Includes personal details, skills, and project showcase.
+## 🛠️ STEP 1: Login to EC2 Manually (One Time)
+
+Launch an **Ubuntu EC2 instance** and connect using SSH:
+
+```bash
+ssh -i your-key.pem ubuntu@<EC2_PUBLIC_IP>
+```
 
 ---
 
-### 2️⃣ Dockerize the Application
+## 🛠️ STEP 2: Install Docker on EC2
 
-Created a Dockerfile to serve static files using Nginx.
+Run the following commands on EC2:
+
+```bash
+sudo apt update
+sudo apt install docker.io -y
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker ubuntu
+```
+
+🔁 **Logout and login again** for Docker permission to apply.
+
+Verify installation:
+
+```bash
+docker --version
+```
+
+---
+
+## 🛠️ STEP 3: Install Git on EC2
+
+```bash
+sudo apt install git -y
+git --version
+```
+
+---
+
+## 🛠️ STEP 4: Clone GitHub Repository on EC2
+
+```bash
+git clone https://github.com/<your-username>/portfolio-devops.git
+cd portfolio-devops
+```
+
+Verify files:
+
+```bash
+ls
+```
+
+You should see:
+
+```
+Dockerfile
+index.html
+styles.css
+script.js
+```
+
+---
+
+## 🛠️ STEP 5: Dockerize the Application
+
+Dockerfile used to serve static files with Nginx:
 
 ```dockerfile
 FROM nginx:alpine
@@ -76,14 +135,14 @@ EXPOSE 80
 
 ---
 
-### 3️⃣ Test Application Locally
+## 🛠️ STEP 6: Test Application Locally (Optional)
 
 ```bash
 docker build -t portfolio .
 docker run -d -p 8080:80 portfolio
 ```
 
-Access the site at:
+Access:
 
 ```
 http://localhost:8080
@@ -91,45 +150,17 @@ http://localhost:8080
 
 ---
 
-### 4️⃣ Push Code to GitHub
+## 🛠️ STEP 7: Configure CI/CD with GitHub Actions
 
-```bash
-git init
-git add .
-git commit -m "Initial portfolio with Docker"
-git push origin main
-```
-
----
-
-### 5️⃣ Setup AWS EC2
-
-* Launched an Ubuntu EC2 instance (t2.micro)
-* Opened ports **22 (SSH)** and **80 (HTTP)**
-* Installed Docker and Git on EC2
-
----
-
-### 6️⃣ Clone Repository on EC2
-
-```bash
-git clone https://github.com/<your-username>/portfolio-devops.git
-cd portfolio-devops
-```
-
----
-
-### 7️⃣ Configure CI/CD with GitHub Actions
-
-* Created GitHub Actions workflow
-* Pipeline connects to EC2 using SSH
+* Created a GitHub Actions workflow
+* Pipeline connects to EC2 via SSH
 * Pulls latest code
 * Builds Docker image
 * Runs container automatically
 
-#### Deployment Script (deploy.yml)
+### Deployment Commands Used in Pipeline
 
-```yaml
+```bash
 docker stop portfolio || true
 docker rm portfolio || true
 docker build -t portfolio .
@@ -138,10 +169,11 @@ docker run -d -p 80:80 --name portfolio portfolio
 
 ---
 
-### 8️⃣ Automated Deployment
+## 🔁 Automated Deployment Flow
 
-* Every `git push` triggers the CI/CD pipeline
-* Website is automatically updated on AWS EC2
+* Any `git push` to `main` branch triggers CI/CD
+* GitHub Actions deploys latest version to EC2
+* Website updates automatically without manual intervention
 
 ---
 
@@ -157,10 +189,10 @@ http://<EC2-PUBLIC-IP>
 
 ## 🎓 Key Learning Outcomes
 
-* Understanding of **Docker containerization**
-* Practical implementation of **CI/CD pipelines**
-* Experience with **AWS EC2 cloud deployment**
-* Hands-on DevOps automation using GitHub Actions
+* Docker containerization for static applications
+* CI/CD pipeline implementation using GitHub Actions
+* Cloud deployment using AWS EC2
+* Real-world DevOps automation workflow
 
 ---
 
@@ -172,10 +204,10 @@ http://<EC2-PUBLIC-IP>
 
 ## 🔮 Future Enhancements
 
-* Add HTTPS using SSL (Certbot)
-* Use custom domain with Route 53
-* Implement Docker image versioning
-* Add monitoring using AWS CloudWatch
+* HTTPS using SSL (Certbot)
+* Custom domain using AWS Route 53
+* Docker image versioning
+* Monitoring with AWS CloudWatch
 
 ---
 
@@ -191,4 +223,3 @@ MCA Student | DevOps | AWS Cloud
 This project was created for academic and learning purposes to understand real-world DevOps deployment workflows.
 
 ---
-
