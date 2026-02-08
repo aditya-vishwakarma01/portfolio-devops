@@ -19,7 +19,21 @@ jobs:
           username: ubuntu
           key: ${{ secrets.EC2_KEY }}
           script: |
+            cd ~/portfolio-devops
+            git pull origin main
+
             docker stop portfolio || true
             docker rm portfolio || true
+
             docker build -t portfolio .
             docker run -d -p 80:80 --name portfolio portfolio
+
+# Add GitHub Secrets 🔐
+
+# In GitHub repo → Settings → Secrets → Actions
+
+# Add:
+
+# EC2_HOST → EC2 public IP
+
+# EC2_KEY → private key content (.pem)
