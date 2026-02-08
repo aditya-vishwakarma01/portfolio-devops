@@ -1,0 +1,25 @@
+name: Deploy Portfolio to EC2
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_KEY }}
+          script: |
+            docker stop portfolio || true
+            docker rm portfolio || true
+            docker build -t portfolio .
+            docker run -d -p 80:80 --name portfolio portfolio

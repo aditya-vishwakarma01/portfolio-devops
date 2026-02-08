@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anup Prajapati | DevOps & Cloud Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="header-container container">
+            <div class="logo">
+                <h1>Anup Prajapati</h1>
+                <p>Certified AWS Cloud Practitioner | DevOps Enthusiast</p>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Anup Prajapati</h1>
+                <h2>DevOps & Cloud Engineer</h2>
+                <p>Recent IT graduate with expertise in AWS, CI/CD, Linux, and automation. Passionate about building
+                    scalable cloud solutions and streamlining development workflows.</p>
+
+                <div class="hero-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>prajapatianup608@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91-9321884294</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Mumbai, India</span>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn">Get In Touch</a>
+                    <a href="#projects" class="btn btn-outline">View Projects</a>
+                    <button class="btn btn-outline" id="downloadResume">
+                        <i class="fas fa-download"></i> Download Resume
+                    </button>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/anup-prajapati-701837309" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:prajapatianup608@gmail.com" class="social-icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="img/1718271053453.jpeg" alt="Anup Prajapati" class="profile-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Recent IT graduate with foundational knowledge in cloud computing, web development, and DevOps.
+                        Certified AWS Cloud Practitioner with hands-on experience in networking, Linux, Python, and web
+                        technologies like HTML, CSS.</p>
+                    <p>Seeking a position to apply and enhance technical skills while contributing to innovative cloud
+                        and web-based solutions.</p>
+                    <p>I am passionate about creating efficient, automated solutions that leverage cloud technologies to
+                        solve real-world problems. My goal is to continuously learn and grow in the DevOps and cloud
+                        computing field.</p>
+                </div>
+
+                <div class="personal-details">
+                    <h3 class="details-title">Personal Details</h3>
+
+                    <div class="detail-item">
+                        <div class="detail-label">Gender:</div>
+                        <div class="detail-value">Male</div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-label">Marital Status:</div>
+                        <div class="detail-value">Unmarried</div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-label">Languages:</div>
+                        <div class="detail-value">English, Hindi, Marathi</div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-label">Location:</div>
+                        <div class="detail-value">Mumbai, Maharashtra, India</div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-label">Interests:</div>
+                        <div class="detail-value">Cloud Computing, Automation, Web Development, DevOps</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title center">My Projects</h2>
+
+            <div class="projects-filter" id="projectsFilter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="aws">AWS</button>
+                <button class="filter-btn" data-filter="devops">DevOps</button>
+                <button class="filter-btn" data-filter="docker">Docker</button>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="aws devops">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1772&q=80"
+                        alt="AWS Website Deployment" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Static Website Deployment on AWS</h3>
+                        <p class="project-desc">Deployed a static website on EC2 with S3 storage integration,
+                            incorporating AWS CloudWatch and SNS for real-time monitoring and alerting. Ensured website
+                            availability and reliability by setting up health checks and alert notifications.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">EC2</span>
+                            <span class="tech-tag">S3</span>
+                            <span class="tech-tag">CloudWatch</span>
+                            <span class="tech-tag">SNS</span>
+                            <span class="tech-tag">Route53</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-category="aws devops">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1774&q=80"
+                        alt="CI/CD Pipeline" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Automated CI/CD Pipeline</h3>
+                        <p class="project-desc">Developed an automated CI/CD pipeline leveraging AWS CodeCommit,
+                            CodeBuild, and CodeDeploy to streamline website deployment and ensure continuous
+                            integration. Improved development efficiency and minimized deployment errors.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">CodeCommit</span>
+                            <span class="tech-tag">CodeBuild</span>
+                            <span class="tech-tag">CodeDeploy</span>
+                            <span class="tech-tag">CI/CD</span>
+                            <span class="tech-tag">Automation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-category="docker aws">
+                    <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80"
+                        alt="Docker Container" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Custom Docker Image & Container</h3>
+                        <p class="project-desc">Designed a custom EC2 image integrated with Docker to facilitate
+                            seamless container deployment and management. Successfully built and launched containers
+                            from the custom image to deploy and run applications in isolated environments.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">EC2</span>
+                            <span class="tech-tag">Containers</span>
+                            <span class="tech-tag">Automation</span>
+                            <span class="tech-tag">Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title center">Technical Skills</h2>
+
+            <div class="skills-container">
+                <!-- AWS Skills -->
+                <div class="skill-category">
+                    <h3><i class="fab fa-aws"></i> AWS Cloud</h3>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">EC2 & Auto Scaling</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="85"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">S3 & Cloud Storage</span>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="80"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">IAM & Security</span>
+                            <span class="skill-percent">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="75"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">VPC & Networking</span>
+                            <span class="skill-percent">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="70"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Lambda & Serverless</span>
+                            <span class="skill-percent">65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="65"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DevOps Skills -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-cogs"></i> DevOps & Tools</h3>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">CI/CD Pipeline</span>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="80"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Git & GitHub</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="85"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Linux Administration</span>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="80"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Automation Scripting</span>
+                            <span class="skill-percent">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="75"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Docker & Containers</span>
+                            <span class="skill-percent">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="70"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Skills -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Development & Other</h3>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-percent">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="75"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">HTML & CSS</span>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="80"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-percent">65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="65"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Networking</span>
+                            <span class="skill-percent">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="70"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Problem Solving</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-percent="85"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section class="education" id="education">
+        <div class="container">
+            <h2 class="section-title center">Education & Certifications</h2>
+
+            <div class="education-container">
+                <!-- Education 1 -->
+                <div class="education-card">
+                    <div class="edu-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="edu-title">Bachelor of Science in IT</h3>
+                    <p class="edu-institution">Ramanand Arya D.A.V College, Mumbai University</p>
+                    <p class="edu-details">CGPA: 7.67</p>
+                    <p class="edu-details">Graduated: 2024</p>
+                </div>
+
+                <!-- Education 2 -->
+                <div class="education-card">
+                    <div class="edu-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3 class="edu-title">Higher Secondary School Certificate</h3>
+                    <p class="edu-institution">K.J Somaiya College, Mumbai</p>
+                    <p class="edu-details">Percentage: 67.69%</p>
+                    <p class="edu-details">Completed: 2020</p>
+                </div>
+
+                <!-- Education 3 -->
+                <div class="education-card">
+                    <div class="edu-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="edu-title">Secondary School Certificate</h3>
+                    <p class="edu-institution">Kalwa Hindi High School, Mumbai</p>
+                    <p class="edu-details">Percentage: 74.60%</p>
+                    <p class="edu-details">Completed: 2018</p>
+                </div>
+            </div>
+
+            <div class="certifications">
+                <!-- Certification 1 -->
+                <div class="cert-card">
+                    <div class="cert-logo">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <h4 class="cert-name">AWS Certified Cloud Practitioner</h4>
+                    <p class="cert-date">Completed: Jan 07, 2025</p>
+                </div>
+
+                <!-- Certification 2 -->
+                <div class="cert-card">
+                    <div class="cert-logo">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h4 class="cert-name">AWS re/Start Graduate</h4>
+                    <p class="cert-date">Completed: 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title center">Get In Touch</h2>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+
+                    <div class="contact-item-large">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Ishwar Nagar, Kalwa, Thane, Mumbai, India</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item-large">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>prajapatianup608@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item-large">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+91-9321884294</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item-large">
+                        <i class="fas fa-clock"></i>
+                        <div class="contact-details">
+                            <h4>Availability</h4>
+                            <p>Open to new opportunities and collaborations</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/anup-prajapati-701837309" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/" target="_blank" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:prajapatianup608@gmail.com" class="social-icon">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Send Me a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Anup Prajapati</h3>
+                    <p>DevOps & Cloud Engineer specializing in AWS, CI/CD, and automation. Passionate about building
+                        scalable solutions and optimizing development workflows.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <div class="footer-social">
+                        <a href="https://linkedin.com/in/anup-prajapati-701837309" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:prajapatianup608@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2023 Anup Prajapati. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
